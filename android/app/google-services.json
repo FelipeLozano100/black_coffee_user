@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "316407077323",
+    "firebase_url": "https://bctsmmaps-default-rtdb.firebaseio.com",
+    "project_id": "bctsmmaps",
+    "storage_bucket": "bctsmmaps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316407077323:android:3620139b81245b4c9dbe4e",
+        "android_client_info": {
+          "package_name": "com.blackcoffee.usuario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316407077323-p16dkomkbppksq5ls904jdu2ud2e49lu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blackcoffee.usuario",
+            "certificate_hash": "625c4d24830ee565e0e6490aa4c4b73e775e0088"
+          }
+        },
+        {
+          "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5be7TzRIhlWlaAXMb9mPsFnU6Z0uW9YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316407077323:android:8b1428643a4399989dbe4e",
+        "android_client_info": {
+          "package_name": "com.smartmorro.commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316407077323-d1pnnr8esv8n5gm3aspt3kn426ua83pa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartmorro.commerce",
+            "certificate_hash": "625c4d24830ee565e0e6490aa4c4b73e775e0088"
+          }
+        },
+        {
+          "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5be7TzRIhlWlaAXMb9mPsFnU6Z0uW9YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316407077323:android:69087ed981704ebd9dbe4e",
+        "android_client_info": {
+          "package_name": "com.smartmorro.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316407077323-ia0uaspouqvh70bbi3j9f876tjkre3e7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartmorro.delivery",
+            "certificate_hash": "625c4d24830ee565e0e6490aa4c4b73e775e0088"
+          }
+        },
+        {
+          "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5be7TzRIhlWlaAXMb9mPsFnU6Z0uW9YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316407077323:android:0dc21c93d3b0a0759dbe4e",
+        "android_client_info": {
+          "package_name": "com.smartmorro.users"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316407077323-qvcslqhki3dnoqe9aetp1258tsaikabe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartmorro.users",
+            "certificate_hash": "625c4d24830ee565e0e6490aa4c4b73e775e0088"
+          }
+        },
+        {
+          "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5be7TzRIhlWlaAXMb9mPsFnU6Z0uW9YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316407077323-ut344goun6bptdu50sstn04kl5i9u2lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
