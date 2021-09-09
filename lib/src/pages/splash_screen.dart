@@ -43,7 +43,7 @@ class SplashScreenState extends StateMVC<SplashScreen> {
       key: _con.scaffoldKey,
       body: Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).scaffoldBackgroundColor,
+          color: Colors.black,
         ),
         child: Center(
           child: Column(
