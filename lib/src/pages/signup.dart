@@ -152,50 +152,50 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                             ),
                           ),
                           SizedBox(height: 30),
-                          TextFormField(
-                            keyboardType: TextInputType.phone,
-                            onSaved: (input) => _con.user.phone = '+52' + input,
-                            validator: (input) {
-                              print(input.startsWith('\+'));
-                              // return !input.startsWith('\+') &&
-                              //         !input.startsWith('00')
-                              //     ? "Debe ser un número de móvil válido con código de país."
-                              //     : null;
+                          // TextFormField(
+                          //   keyboardType: TextInputType.phone,
+                          //   onSaved: (input) => _con.user.phone = '+52' + input,
+                          //   validator: (input) {
+                          //     print(input.startsWith('\+'));
+                          //     // return !input.startsWith('\+') &&
+                          //     //         !input.startsWith('00')
+                          //     //     ? "Debe ser un número de móvil válido con código de país."
+                          //     //     : null;
 
-                              return input.length != 10
-                                  ? "El teléfono debe ser de 10 digitos"
-                                  : null;
-                            },
-                            decoration: InputDecoration(
-                              labelText: S.of(context).phoneNumber,
-                              labelStyle: TextStyle(
-                                  color: Theme.of(context).accentColor),
-                              contentPadding: EdgeInsets.all(12),
-                              hintText: '4761234569',
-                              hintStyle: TextStyle(
-                                  color: Theme.of(context)
-                                      .focusColor
-                                      .withOpacity(0.7)),
-                              prefixIcon: Icon(Icons.phone_android,
-                                  color: Theme.of(context).accentColor),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .focusColor
-                                          .withOpacity(0.2))),
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .focusColor
-                                          .withOpacity(0.5))),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .focusColor
-                                          .withOpacity(0.2))),
-                            ),
-                          ),
-                          SizedBox(height: 30),
+                          //     return input.length != 10
+                          //         ? "El teléfono debe ser de 10 digitos"
+                          //         : null;
+                          //   },
+                          //   decoration: InputDecoration(
+                          //     labelText: S.of(context).phoneNumber,
+                          //     labelStyle: TextStyle(
+                          //         color: Theme.of(context).accentColor),
+                          //     contentPadding: EdgeInsets.all(12),
+                          //     hintText: '4761234569',
+                          //     hintStyle: TextStyle(
+                          //         color: Theme.of(context)
+                          //             .focusColor
+                          //             .withOpacity(0.7)),
+                          //     prefixIcon: Icon(Icons.phone_android,
+                          //         color: Theme.of(context).accentColor),
+                          //     border: OutlineInputBorder(
+                          //         borderSide: BorderSide(
+                          //             color: Theme.of(context)
+                          //                 .focusColor
+                          //                 .withOpacity(0.2))),
+                          //     focusedBorder: OutlineInputBorder(
+                          //         borderSide: BorderSide(
+                          //             color: Theme.of(context)
+                          //                 .focusColor
+                          //                 .withOpacity(0.5))),
+                          //     enabledBorder: OutlineInputBorder(
+                          //         borderSide: BorderSide(
+                          //             color: Theme.of(context)
+                          //                 .focusColor
+                          //                 .withOpacity(0.2))),
+                          //   ),
+                          // ),
+                          // SizedBox(height: 30),
                           TextFormField(
                             obscureText: _con.hidePassword,
                             onSaved: (input) => _con.user.password = input,
@@ -253,22 +253,25 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                             onPressed: () {
                               if (_con.loginFormKey.currentState.validate()) {
                                 _con.loginFormKey.currentState.save();
-                                var bottomSheetController = _con
-                                    .scaffoldKey.currentState
-                                    .showBottomSheet(
-                                  (context) =>
-                                      MobileVerificationBottomSheetWidget(
-                                          scaffoldKey: _con.scaffoldKey,
-                                          user: _con.user),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: new BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                  ),
-                                );
-                                bottomSheetController.closed.then((value) {
-                                  _con.register();
-                                });
+                                _con.register();
+                                // var bottomSheetController = _con
+                                //     .scaffoldKey.currentState
+                                //     .showBottomSheet(
+                                //   (context) => GestureDetector(
+                                //     onVerticalDragStart: (_) {},
+                                //     child: MobileVerificationBottomSheetWidget(
+                                //         scaffoldKey: _con.scaffoldKey,
+                                //         user: _con.user),
+                                //   ),
+                                //   shape: RoundedRectangleBorder(
+                                //     borderRadius: new BorderRadius.only(
+                                //         topLeft: Radius.circular(10),
+                                //         topRight: Radius.circular(10)),
+                                //   ),
+                                // // );
+                                // bottomSheetController.closed.then((value) {
+                                //   _con.register();
+                                // });
                               }
                             },
                           ),

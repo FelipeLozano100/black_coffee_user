@@ -29,22 +29,34 @@ class _NotificationsWidgetState extends StateMVC<NotificationsWidget> {
     return Scaffold(
       key: _con.scaffoldKey,
       appBar: AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
-          onPressed: () => widget.parentScaffoldKey.currentState.openDrawer(),
-        ),
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: Text(
-          S.of(context).notifications,
-          style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+          S.of(context).settings,
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              .merge(TextStyle(letterSpacing: 1.3)),
         ),
-        actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
-        ],
       ),
+      // appBar: AppBar(
+      //   leading: new IconButton(
+      //     icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
+      //     onPressed: () => widget.parentScaffoldKey.currentState.openDrawer(),
+      //   ),
+      //   automaticallyImplyLeading: false,
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   centerTitle: true,
+      //   title: Text(
+      //     S.of(context).notifications,
+      //     style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+      //   ),
+      //   actions: <Widget>[
+      //     new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+      //   ],
+      // ),
       body: currentUser.value.apiToken == null
           ? PermissionDeniedWidget()
           : RefreshIndicator(
@@ -69,7 +81,9 @@ class _NotificationsWidgetState extends StateMVC<NotificationsWidget> {
                               style: Theme.of(context).textTheme.headline4,
                             ),
                             subtitle: Text(
-                              S.of(context).swipeLeftTheNotificationToDeleteOrReadUnreadIt,
+                              S
+                                  .of(context)
+                                  .swipeLeftTheNotificationToDeleteOrReadUnreadIt,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context).textTheme.caption,
@@ -89,13 +103,16 @@ class _NotificationsWidgetState extends StateMVC<NotificationsWidget> {
                             return NotificationItemWidget(
                               notification: _con.notifications.elementAt(index),
                               onMarkAsRead: () {
-                                _con.doMarkAsReadNotifications(_con.notifications.elementAt(index));
+                                _con.doMarkAsReadNotifications(
+                                    _con.notifications.elementAt(index));
                               },
                               onMarkAsUnRead: () {
-                                _con.doMarkAsUnReadNotifications(_con.notifications.elementAt(index));
+                                _con.doMarkAsUnReadNotifications(
+                                    _con.notifications.elementAt(index));
                               },
                               onRemoved: () {
-                                _con.doRemoveNotification(_con.notifications.elementAt(index));
+                                _con.doRemoveNotification(
+                                    _con.notifications.elementAt(index));
                               },
                             );
                           },

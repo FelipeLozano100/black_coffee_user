@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/src/pages/settings.dart';
 
 import '../elements/DrawerWidget.dart';
 import '../elements/FilterWidget.dart';
@@ -54,7 +55,8 @@ class _PagesWidgetState extends State<PagesWidget> {
       widget.currentTab = tabItem;
       switch (tabItem) {
         case 0:
-          widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
+          // widget.currentPage = NotificationsWidget(parentScaffoldKey: widget.scaffoldKey);
+          widget.currentPage = SettingsWidget(parentScaffoldKey: widget.scaffoldKey);
           break;
         case 1:
           widget.currentPage = MapWidget(parentScaffoldKey: widget.scaffoldKey, routeArgument: widget.routeArgument);
@@ -100,7 +102,8 @@ class _PagesWidgetState extends State<PagesWidget> {
           // this will be set when a new tab is tapped
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
+              // icon: Icon(Icons.notifications),
+              icon: Icon(Icons.person),
               label: '',
             ),
             BottomNavigationBarItem(

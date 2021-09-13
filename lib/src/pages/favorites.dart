@@ -30,22 +30,34 @@ class _FavoritesWidgetState extends StateMVC<FavoritesWidget> {
     return Scaffold(
       key: _con.scaffoldKey,
       appBar: AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-        ),
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: Text(
-          S.of(context).favorites,
-          style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+          S.of(context).settings,
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              .merge(TextStyle(letterSpacing: 1.3)),
         ),
-        actions: <Widget>[
-          new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
-        ],
       ),
+      // appBar: AppBar(
+      //   leading: new IconButton(
+      //     icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
+      //     onPressed: () => Scaffold.of(context).openDrawer(),
+      //   ),
+      //   automaticallyImplyLeading: false,
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   centerTitle: true,
+      //   title: Text(
+      //     S.of(context).favorites,
+      //     style: Theme.of(context).textTheme.headline6.merge(TextStyle(letterSpacing: 1.3)),
+      //   ),
+      //   actions: <Widget>[
+      //     new ShoppingCartButtonWidget(iconColor: Theme.of(context).hintColor, labelColor: Theme.of(context).accentColor),
+      //   ],
+      // ),
       body: currentUser.value.apiToken == null
           ? PermissionDeniedWidget()
           : RefreshIndicator(
@@ -89,7 +101,9 @@ class _FavoritesWidgetState extends StateMVC<FavoritesWidget> {
                               },
                               icon: Icon(
                                 Icons.format_list_bulleted,
-                                color: this.layout == 'list' ? Theme.of(context).accentColor : Theme.of(context).focusColor,
+                                color: this.layout == 'list'
+                                    ? Theme.of(context).accentColor
+                                    : Theme.of(context).focusColor,
                               ),
                             ),
                             IconButton(
@@ -100,7 +114,9 @@ class _FavoritesWidgetState extends StateMVC<FavoritesWidget> {
                               },
                               icon: Icon(
                                 Icons.apps,
-                                color: this.layout == 'grid' ? Theme.of(context).accentColor : Theme.of(context).focusColor,
+                                color: this.layout == 'grid'
+                                    ? Theme.of(context).accentColor
+                                    : Theme.of(context).focusColor,
                               ),
                             )
                           ],
@@ -140,9 +156,14 @@ class _FavoritesWidgetState extends StateMVC<FavoritesWidget> {
                               padding: EdgeInsets.symmetric(horizontal: 20),
                               // Create a grid with 2 columns. If you change the scrollDirection to
                               // horizontal, this produces 2 rows.
-                              crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 2 : 4,
+                              crossAxisCount:
+                                  MediaQuery.of(context).orientation ==
+                                          Orientation.portrait
+                                      ? 2
+                                      : 4,
                               // Generate 100 widgets that display their index in the List.
-                              children: List.generate(_con.favorites.length, (index) {
+                              children:
+                                  List.generate(_con.favorites.length, (index) {
                                 return FavoriteGridItemWidget(
                                   heroTag: 'favorites_grid',
                                   favorite: _con.favorites.elementAt(index),

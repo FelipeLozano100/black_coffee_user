@@ -249,7 +249,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thisNotificationHasMarkedAsUnread" : MessageLookupByLibrary.simpleMessage("Esta notificación se marcó como no leída"),
     "thisRestaurantNotSupportDeliveryMethod" : MessageLookupByLibrary.simpleMessage("Este restaurante no admite el método de entrega."),
     "this_account_not_exist" : MessageLookupByLibrary.simpleMessage("Esta cuenta no existe"),
-    "this_email_account_exists" : MessageLookupByLibrary.simpleMessage("Esta cuenta de correo electrónico existe"),
+    "this_email_account_exists" : MessageLookupByLibrary.simpleMessage("Esta cuenta de correo electrónico ya existe o el correo capturado no es valido"),
     "this_food_was_added_to_cart" : MessageLookupByLibrary.simpleMessage("Esta comida fue agregada al carrito"),
     "this_restaurant_is_closed_" : MessageLookupByLibrary.simpleMessage("¡Este restaurante está cerrado!"),
     "top_restaurants" : MessageLookupByLibrary.simpleMessage("Mejores restaurantes"),

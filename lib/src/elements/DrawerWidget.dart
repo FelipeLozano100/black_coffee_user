@@ -57,7 +57,8 @@ class _DrawerWidgetState extends StateMVC<DrawerWidget> {
                                 width: double.infinity,
                                 height: 80,
                               ),
-                              errorWidget: (context, url, error) => Icon(Icons.error_outline),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error_outline),
                             ),
                           ),
                         ),
@@ -111,7 +112,7 @@ class _DrawerWidgetState extends StateMVC<DrawerWidget> {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/Pages', arguments: 0);
+              Navigator.of(context).pushNamed('/Notifications', arguments: 0);
             },
             leading: Icon(
               Icons.notifications,
@@ -185,36 +186,36 @@ class _DrawerWidgetState extends StateMVC<DrawerWidget> {
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
-          ListTile(
-            onTap: () {
-              if (currentUser.value.apiToken != null) {
-                Navigator.of(context).pushNamed('/Settings');
-              } else {
-                Navigator.of(context).pushReplacementNamed('/Login');
-              }
-            },
-            leading: Icon(
-              Icons.settings,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
-            title: Text(
-              S.of(context).settings,
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-          ),
-          ListTile(
-            onTap: () {
-              Navigator.of(context).pushNamed('/Languages');
-            },
-            leading: Icon(
-              Icons.translate,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
-            title: Text(
-              S.of(context).languages,
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-          ),
+          // ListTile(
+          //   onTap: () {
+          //     if (currentUser.value.apiToken != null) {
+          //       Navigator.of(context).pushNamed('/Settings');
+          //     } else {
+          //       Navigator.of(context).pushReplacementNamed('/Login');
+          //     }
+          //   },
+          //   leading: Icon(
+          //     Icons.settings,
+          //     color: Theme.of(context).focusColor.withOpacity(1),
+          //   ),
+          //   title: Text(
+          //     S.of(context).settings,
+          //     style: Theme.of(context).textTheme.subtitle1,
+          //   ),
+          // ),
+          // ListTile(
+          //   onTap: () {
+          //     Navigator.of(context).pushNamed('/Languages');
+          //   },
+          //   leading: Icon(
+          //     Icons.translate,
+          //     color: Theme.of(context).focusColor.withOpacity(1),
+          //   ),
+          //   title: Text(
+          //     S.of(context).languages,
+          //     style: Theme.of(context).textTheme.subtitle1,
+          //   ),
+          // ),
           ListTile(
             onTap: () {
               if (Theme.of(context).brightness == Brightness.dark) {

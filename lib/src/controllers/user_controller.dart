@@ -94,7 +94,11 @@ class UserController extends ControllerMVC {
       Overlay.of(state.context).insert(loader);
       repository.register(user).then((value) {
         if (value != null && value.apiToken != null) {
-          Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 2);
+          // Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Pages', arguments: 2);
+          Navigator.of(scaffoldKey.currentContext).pushReplacementNamed('/Settings', arguments: 2);
+          ScaffoldMessenger.of(scaffoldKey?.currentContext).showSnackBar(SnackBar(
+            content: Text("Ingresa tu télefono y dirección para poder continuar"),
+          ));
         } else {
         ScaffoldMessenger.of(scaffoldKey?.currentContext).showSnackBar(SnackBar(
             content: Text(S.of(state.context).wrong_email_or_password),

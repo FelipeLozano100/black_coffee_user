@@ -71,11 +71,13 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                         ),
                         new TextFormField(
                           style: TextStyle(color: Theme.of(context).hintColor),
-                          keyboardType:  TextInputType.phone,
+                          keyboardType: TextInputType.phone,
                           decoration: getInputDecoration(
                               hintText: '4761234567',
                               labelText: S.of(context).phone),
-                          initialValue: widget.user.phone,
+                          initialValue: widget.user.phone == ""
+                              ? widget.user.phone
+                              : widget.user.phone.substring(3),
                           validator: (input) => input.trim().length != 10
                               ? "El teléfono debe ser de 10 digitos"
                               : null,
@@ -100,9 +102,8 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                               hintText: S.of(context).your_biography,
                               labelText: S.of(context).about),
                           initialValue: widget.user.bio,
-                          validator: (input) => input.trim().length < 3
-                              ? null
-                              : null,
+                          validator: (input) =>
+                              input.trim().length < 3 ? null : null,
                           onSaved: (input) => widget.user.bio = input,
                         ),
                       ],
@@ -117,7 +118,9 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                         },
                         child: Text(S.of(context).cancel),
                       ),
-                      SizedBox(width: 8,),
+                      SizedBox(
+                        width: 8,
+                      ),
                       MaterialButton(
                         onPressed: _submit,
                         child: Text(
