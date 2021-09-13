@@ -127,7 +127,7 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                               labelStyle: TextStyle(
                                   color: Theme.of(context).accentColor),
                               contentPadding: EdgeInsets.all(12),
-                              hintText: 'johndoe@gmail.com',
+                              hintText: 'prueba@gmail.com',
                               hintStyle: TextStyle(
                                   color: Theme.of(context)
                                       .focusColor
@@ -154,12 +154,16 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                           SizedBox(height: 30),
                           TextFormField(
                             keyboardType: TextInputType.phone,
-                            onSaved: (input) => _con.user.phone = input,
+                            onSaved: (input) => _con.user.phone = '+52' + input,
                             validator: (input) {
                               print(input.startsWith('\+'));
-                              return !input.startsWith('\+') &&
-                                      !input.startsWith('00')
-                                  ? "Should be valid mobile number with country code"
+                              // return !input.startsWith('\+') &&
+                              //         !input.startsWith('00')
+                              //     ? "Debe ser un número de móvil válido con código de país."
+                              //     : null;
+
+                              return input.length != 10
+                                  ? "El teléfono debe ser de 10 digitos"
                                   : null;
                             },
                             decoration: InputDecoration(
@@ -167,7 +171,7 @@ class _SignUpWidgetState extends StateMVC<SignUpWidget> {
                               labelStyle: TextStyle(
                                   color: Theme.of(context).accentColor),
                               contentPadding: EdgeInsets.all(12),
-                              hintText: '+91 1362 699765',
+                              hintText: '4761234569',
                               hintStyle: TextStyle(
                                   color: Theme.of(context)
                                       .focusColor

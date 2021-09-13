@@ -82,7 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "help_support" : MessageLookupByLibrary.simpleMessage("Ajuda e Suporte"),
     "help_supports" : MessageLookupByLibrary.simpleMessage("Ajuda e Suporte"),
     "hint_full_address" : MessageLookupByLibrary.simpleMessage("12 Street, City 21663, Country"),
-    "home" : MessageLookupByLibrary.simpleMessage("Casa"),
+    "home" : MessageLookupByLibrary.simpleMessage("Inicio"),
     "home_address" : MessageLookupByLibrary.simpleMessage("Home Address"),
     "how_would_you_rate_this_restaurant_" : MessageLookupByLibrary.simpleMessage("How would you rate this restaurant ?"),
     "i_dont_have_an_account" : MessageLookupByLibrary.simpleMessage("Eu não tenho uma conta?"),

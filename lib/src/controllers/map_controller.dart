@@ -42,8 +42,8 @@ class MapController extends ControllerMVC {
       setState(() {
         if (currentAddress.isUnknown()) {
           cameraPosition = CameraPosition(
-            target: LatLng(40, 3),
-            zoom: 4,
+            target: LatLng(21.02350554805529, -101.86576886751718),
+            zoom: 13,
           );
         } else {
           cameraPosition = CameraPosition(

@@ -61,7 +61,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                           style: TextStyle(color: Theme.of(context).hintColor),
                           keyboardType: TextInputType.emailAddress,
                           decoration: getInputDecoration(
-                              hintText: 'johndo@gmail.com',
+                              hintText: 'pruba@gmail.com',
                               labelText: S.of(context).email_address),
                           initialValue: widget.user.email,
                           validator: (input) => !input.contains('@')
@@ -71,15 +71,15 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                         ),
                         new TextFormField(
                           style: TextStyle(color: Theme.of(context).hintColor),
-                          keyboardType: TextInputType.text,
+                          keyboardType:  TextInputType.phone,
                           decoration: getInputDecoration(
-                              hintText: '+136 269 9765',
+                              hintText: '4761234567',
                               labelText: S.of(context).phone),
                           initialValue: widget.user.phone,
-                          validator: (input) => input.trim().length < 3
-                              ? S.of(context).not_a_valid_phone
+                          validator: (input) => input.trim().length != 10
+                              ? "El teléfono debe ser de 10 digitos"
                               : null,
-                          onSaved: (input) => widget.user.phone = input,
+                          onSaved: (input) => widget.user.phone = '+52' + input,
                         ),
                         new TextFormField(
                           style: TextStyle(color: Theme.of(context).hintColor),
@@ -101,7 +101,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                               labelText: S.of(context).about),
                           initialValue: widget.user.bio,
                           validator: (input) => input.trim().length < 3
-                              ? S.of(context).not_a_valid_biography
+                              ? null
                               : null,
                           onSaved: (input) => widget.user.bio = input,
                         ),
@@ -117,6 +117,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                         },
                         child: Text(S.of(context).cancel),
                       ),
+                      SizedBox(width: 8,),
                       MaterialButton(
                         onPressed: _submit,
                         child: Text(

@@ -162,7 +162,7 @@ class _SettingsWidgetState extends StateMVC<SettingsWidget> {
                               ],
                             ),
                             trailing: Text(
-                              currentUser.value.phone,
+                              currentUser.value.phone ?? "",
                               style: TextStyle(color: Theme.of(context).focusColor),
                             ),
                           ),

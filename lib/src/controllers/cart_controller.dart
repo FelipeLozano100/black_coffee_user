@@ -142,14 +142,15 @@ class CartController extends ControllerMVC {
     if (!currentUser.value.profileCompleted()) {
       ScaffoldMessenger.of(scaffoldKey?.currentContext).showSnackBar(SnackBar(
         content: Text(S.of(context).completeYourProfileDetailsToContinue),
-        action: SnackBarAction(
-          label: S.of(context).settings,
-          textColor: Theme.of(context).accentColor,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/Settings');
-          },
-        ),
+        // action: SnackBarAction(
+        //   label: S.of(context).settings,
+        //   textColor: Theme.of(context).accentColor,
+        //   onPressed: () {
+        //     Navigator.of(context).pushNamed('/Settings');
+        //   },
+        // ),
       ));
+      Navigator.of(context).pushNamed('/Settings');
     } else {
       if (carts[0].food.restaurant.closed) {
         ScaffoldMessenger.of(scaffoldKey?.currentContext).showSnackBar(SnackBar(
