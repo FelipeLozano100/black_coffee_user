@@ -64,11 +64,11 @@ class CartBottomDetailsWidget extends StatelessWidget {
                         Helper.getPrice(
                             _con.carts[0].food.restaurant.deliveryFee, context,
                             style: Theme.of(context).textTheme.subtitle1,
-                            zeroPlaceholder: 'Free')
+                            zeroPlaceholder: 'Gratis')
                       else
                         Helper.getPrice(0, context,
                             style: Theme.of(context).textTheme.subtitle1,
-                            zeroPlaceholder: 'Free')
+                            zeroPlaceholder: 'Gratis')
                     ],
                   ),
                   Row(
@@ -116,7 +116,7 @@ class CartBottomDetailsWidget extends StatelessWidget {
                             style: Theme.of(context).textTheme.headline4.merge(
                                 TextStyle(
                                     color: Theme.of(context).primaryColor)),
-                            zeroPlaceholder: 'Free'),
+                            zeroPlaceholder: 'Gratis'),
                       )
                     ],
                   ),
