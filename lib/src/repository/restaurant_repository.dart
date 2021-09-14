@@ -20,7 +20,7 @@ Future<Stream<Restaurant>> getNearRestaurants(Address myLocation, Address areaLo
   Filter filter = Filter.fromJSON(json.decode(prefs.getString('filter') ?? '{}'));
 
   _queryParams['limit'] = '6';
-  if (!myLocation.isUnknown() && !areaLocation.isUnknown()) {
+  if (myLocation.latitude != null && areaLocation.latitude != null) {
     _queryParams['myLon'] = myLocation.longitude.toString();
     _queryParams['myLat'] = myLocation.latitude.toString();
     _queryParams['areaLon'] = areaLocation.longitude.toString();
@@ -49,7 +49,7 @@ Future<Stream<Restaurant>> getPopularRestaurants(Address myLocation) async {
 
   _queryParams['limit'] = '6';
   _queryParams['popular'] = 'all';
-  if (!myLocation.isUnknown()) {
+  if (myLocation.latitude != null) {
     _queryParams['myLon'] = myLocation.longitude.toString();
     _queryParams['myLat'] = myLocation.latitude.toString();
   }
@@ -74,7 +74,7 @@ Future<Stream<Restaurant>> searchRestaurants(String search, Address address) asy
   _queryParams['search'] = 'name:$search;description:$search';
   _queryParams['searchFields'] = 'name:like;description:like';
   _queryParams['limit'] = '5';
-  if (!address.isUnknown()) {
+  if (address.latitude != null) {
     _queryParams['myLon'] = address.longitude.toString();
     _queryParams['myLat'] = address.latitude.toString();
     _queryParams['areaLon'] = address.longitude.toString();
@@ -97,7 +97,7 @@ Future<Stream<Restaurant>> searchRestaurants(String search, Address address) asy
 Future<Stream<Restaurant>> getRestaurant(String id, Address address) async {
   Uri uri = Helper.getUri('api/restaurants/$id');
   Map<String, dynamic> _queryParams = {};
-  if (!address.isUnknown()) {
+  if (address.latitude != null) {
     _queryParams['myLon'] = address.longitude.toString();
     _queryParams['myLat'] = address.latitude.toString();
     _queryParams['areaLon'] = address.longitude.toString();

@@ -55,8 +55,8 @@ Future<dynamic> setCurrentLocation() async {
   MapsUtil mapsUtil = new MapsUtil();
   final whenDone = new Completer();
   Address _address = new Address();
-  location.requestService().then((value) async {
-    location.getLocation().then((_locationData) async {
+  await location.requestService().then((value) async {
+    await location.getLocation().then((_locationData) async {
       String _addressName = await mapsUtil.getAddressName(new LatLng(_locationData?.latitude, _locationData?.longitude), setting.value.googleMapsKey);
       _address = Address.fromJSON({'address': _addressName, 'latitude': _locationData?.latitude, 'longitude': _locationData?.longitude});
       await changeCurrentLocation(_address);
@@ -73,7 +73,7 @@ Future<dynamic> setCurrentLocation() async {
 }
 
 Future<Address> changeCurrentLocation(Address _address) async {
-  if (!_address.isUnknown()) {
+  if (_address.latitude != null) {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('delivery_address', json.encode(_address.toMap()));
   }

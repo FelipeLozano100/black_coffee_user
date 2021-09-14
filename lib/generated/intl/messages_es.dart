@@ -170,7 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "number" : MessageLookupByLibrary.simpleMessage("Número"),
     "nutrition" : MessageLookupByLibrary.simpleMessage("Nutrición"),
     "oneOrMoreFoodsInYourCartNotDeliverable" : MessageLookupByLibrary.simpleMessage("Uno o más alimentos en su carrito no se pueden entregar."),
-    "open" : MessageLookupByLibrary.simpleMessage("Abrir"),
+    "open" : MessageLookupByLibrary.simpleMessage("Abierto"),
     "opened_restaurants" : MessageLookupByLibrary.simpleMessage("Restaurantes abiertos"),
     "or_checkout_with" : MessageLookupByLibrary.simpleMessage("O pagar con"),
     "order" : MessageLookupByLibrary.simpleMessage("Orden"),

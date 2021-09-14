@@ -59,7 +59,7 @@ class Order {
     map["delivery_fee"] = deliveryFee;
     map["foods"] = foodOrders?.map((element) => element.toMap())?.toList();
     map["payment"] = payment?.toMap();
-    if (!deliveryAddress.isUnknown()) {
+    if (deliveryAddress.latitude != null) {
       map["delivery_address_id"] = deliveryAddress?.id;
     }
     return map;

@@ -203,11 +203,11 @@ class Helper {
     if (_unit == 'km') {
       _deliveryRange /= 1.60934;
     }
-    if (_distance == 0 && !deliveryAddress.value.isUnknown()) {
+    if (_distance == 0 && deliveryAddress.value.latitude != null) {
       _distance = sqrt(pow(69.1 * (double.parse(_restaurant.latitude) - deliveryAddress.value.latitude), 2) +
           pow(69.1 * (deliveryAddress.value.longitude - double.parse(_restaurant.longitude)) * cos(double.parse(_restaurant.latitude) / 57.3), 2));
     }
-    _can &= _restaurant.availableForDelivery && (_distance < _deliveryRange) && !deliveryAddress.value.isUnknown();
+    _can &= _restaurant.availableForDelivery && (_distance < _deliveryRange) && deliveryAddress.value.latitude != null;
     return _can;
   }
 

@@ -22,8 +22,10 @@ class MapController extends ControllerMVC {
   MapsUtil mapsUtil = new MapsUtil();
   Completer<GoogleMapController> mapController = Completer();
 
-  void listenForNearRestaurants(Address myLocation, Address areaLocation) async {
-    final Stream<Restaurant> stream = await getNearRestaurants(myLocation, areaLocation);
+  void listenForNearRestaurants(
+      Address myLocation, Address areaLocation) async {
+    final Stream<Restaurant> stream =
+        await getNearRestaurants(myLocation, areaLocation);
     stream.listen((Restaurant _restaurant) {
       setState(() {
         topRestaurants.add(_restaurant);
@@ -52,8 +54,10 @@ class MapController extends ControllerMVC {
           );
         }
       });
-      if (!currentAddress.isUnknown()) {
-        Helper.getMyPositionMarker(currentAddress.latitude, currentAddress.longitude).then((marker) {
+      if (currentAddress.latitude != null) {
+        Helper.getMyPositionMarker(
+                currentAddress.latitude, currentAddress.longitude)
+            .then((marker) {
           setState(() {
             allMarkers.add(marker);
           });
@@ -71,12 +75,15 @@ class MapController extends ControllerMVC {
       currentAddress = await sett.getCurrentLocation();
       setState(() {
         cameraPosition = CameraPosition(
-          target: LatLng(double.parse(currentRestaurant.latitude), double.parse(currentRestaurant.longitude)),
+          target: LatLng(double.parse(currentRestaurant.latitude),
+              double.parse(currentRestaurant.longitude)),
           zoom: 14.4746,
         );
       });
-      if (!currentAddress.isUnknown()) {
-        Helper.getMyPositionMarker(currentAddress.latitude, currentAddress.longitude).then((marker) {
+      if (currentAddress.latitude != null) {
+        Helper.getMyPositionMarker(
+                currentAddress.latitude, currentAddress.longitude)
+            .then((marker) {
           setState(() {
             allMarkers.add(marker);
           });
@@ -107,7 +114,10 @@ class MapController extends ControllerMVC {
   void getRestaurantsOfArea() async {
     setState(() {
       topRestaurants = <Restaurant>[];
-      Address areaAddress = Address.fromJSON({"latitude": cameraPosition.target.latitude, "longitude": cameraPosition.target.longitude});
+      Address areaAddress = Address.fromJSON({
+        "latitude": cameraPosition.target.latitude,
+        "longitude": cameraPosition.target.longitude
+      });
       if (cameraPosition != null) {
         listenForNearRestaurants(currentAddress, areaAddress);
       } else {
@@ -118,7 +128,7 @@ class MapController extends ControllerMVC {
 
   void getDirectionSteps() async {
     currentAddress = await sett.getCurrentLocation();
-    if (!currentAddress.isUnknown()) {
+    if (currentAddress.latitude != null) {
       mapsUtil
           .get("origin=" +
               currentAddress.latitude.toString() +
@@ -132,7 +142,8 @@ class MapController extends ControllerMVC {
           .then((dynamic res) {
         if (res != null) {
           List<LatLng> _latLng = res as List<LatLng>;
-          _latLng?.insert(0, new LatLng(currentAddress.latitude, currentAddress.longitude));
+          _latLng?.insert(
+              0, new LatLng(currentAddress.latitude, currentAddress.longitude));
           setState(() {
             polylines.add(new Polyline(
                 visible: true,
