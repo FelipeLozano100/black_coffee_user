@@ -81,7 +81,9 @@ class CartController extends ControllerMVC {
     removeCart(_cart).then((value) {
       calculateSubtotal();
       ScaffoldMessenger.of(scaffoldKey?.currentContext).showSnackBar(SnackBar(
-        content: Text(S.of(state.context).the_food_was_removed_from_your_cart(_cart.food.name)),
+        content: Text(S
+            .of(state.context)
+            .the_food_was_removed_from_your_cart(_cart.food.name)),
       ));
     });
   }
@@ -100,7 +102,8 @@ class CartController extends ControllerMVC {
     if (Helper.canDelivery(carts[0].food.restaurant, carts: carts)) {
       deliveryFee = carts[0].food.restaurant.deliveryFee;
     }
-    taxAmount = (subTotal + deliveryFee) * carts[0].food.restaurant.defaultTax / 100;
+    taxAmount =
+        (subTotal + deliveryFee) * carts[0].food.restaurant.defaultTax / 100;
     total = subTotal + taxAmount + deliveryFee;
     setState(() {});
   }
@@ -157,7 +160,8 @@ class CartController extends ControllerMVC {
           content: Text(S.of(context).this_restaurant_is_closed_),
         ));
       } else {
-        Navigator.of(context).pushNamed('/DeliveryPickup');
+        Navigator.of(context)
+            .pushNamed('/DeliveryPickup');
       }
     }
   }

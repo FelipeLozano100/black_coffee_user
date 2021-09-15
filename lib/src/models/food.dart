@@ -116,7 +116,7 @@ class Food {
         coupon.valid = false;
       }
       coupon.discountables.forEach((element) {
-        if (!coupon.valid) {
+        // if (!coupon.valid) {
           if (element.discountableType == "App\\Models\\Food") {
             if (element.discountableId == id) {
               coupon = _couponDiscountPrice(coupon);
@@ -130,7 +130,7 @@ class Food {
               coupon = _couponDiscountPrice(coupon);
             }
           }
-        }
+        
       });
     }
     return coupon;
