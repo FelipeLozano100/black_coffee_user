@@ -27,6 +27,19 @@ class CartItemWidget extends StatefulWidget {
 }
 
 class _CartItemWidgetState extends State<CartItemWidget> {
+  sumExtras() {
+    double sum = 0.00;
+    if (widget.cart.extras.length > 0) {
+      for (var i = 0; i < widget.cart.extras.length; i++) {
+        sum += widget.cart.extras[i].price;
+      }
+
+      return sum;
+    } else {
+      return 0.00;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dismissible(
@@ -103,7 +116,8 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                             crossAxisAlignment: WrapCrossAlignment.center,
                             spacing: 5,
                             children: <Widget>[
-                              Helper.getPrice(widget.cart.food.price, context,
+                              Helper.getPrice(
+                                  widget.cart.food.price + sumExtras(), context,
                                   style: Theme.of(context).textTheme.headline4,
                                   zeroPlaceholder: 'Gratis'),
                               widget.cart.food.discountPrice > 0

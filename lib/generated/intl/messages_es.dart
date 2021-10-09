@@ -60,7 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "click_to_pay_with_your_paypal_account" : MessageLookupByLibrary.simpleMessage("Clic para pagar con cuenta de PayPal"),
     "click_to_pay_with_your_visa_card" : MessageLookupByLibrary.simpleMessage("Clic para pagar con Tarjeta Visa"),
     "close" : MessageLookupByLibrary.simpleMessage("Cerrar"),
-    "closed" : MessageLookupByLibrary.simpleMessage("Cerrada"),
+    "closed" : MessageLookupByLibrary.simpleMessage("Cerrado"),
     "completeYourProfileDetailsToContinue" : MessageLookupByLibrary.simpleMessage("Completa los detalles de tu perfil para continuar"),
     "confirm_payment" : MessageLookupByLibrary.simpleMessage("Confirmar pago"),
     "confirm_your_delivery_address" : MessageLookupByLibrary.simpleMessage("Confirma tu direccion de entrega"),
